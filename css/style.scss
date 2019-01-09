@@ -8,7 +8,7 @@
 // Our variables
 $base-font-family: "PT Sans", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
-$base-font-weight: 400;
+$base-font-weight: 300;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
@@ -146,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: #aaa !important;
+    color: #87631b !important;
     text-decoration: none;
 
     &:visited {
@@ -384,8 +384,8 @@ pre {
   }
 }
 .site-description {
-  font-size: 14px;
-  letter-spacing: 2px;
+  font-size: 16px;
+  letter-spacing: 1px;
   text-indent: 6px;
   font-family: 'Josefin Sans';
 }
