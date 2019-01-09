@@ -9,7 +9,7 @@
 title: Jay
 email: jaywalnut310@gmail.com
 description: Probabilistic Models
-baseurl: "/about" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jaywalnut310.github.io" # the base hostname & protocol for your site
 github_username:  jaywalnut310
 linkedin_username: jaywalnut310
