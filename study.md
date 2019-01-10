@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: Blog 
-permalink: /blog/
-category: "blog"
+title: Study 
+permalink: /study/
+category: "study"
 ---
