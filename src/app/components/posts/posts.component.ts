@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireStorage } from '@angular/fire/storage';
-import { HttpClient } from "@angular/common/http";
 import { AuthService } from "../../shared/services/auth.service";
+import { PostService } from "../../shared/services/post.service";
+import { Post } from "../../shared/models/post.model";
+
 
 @Component({
   selector: 'app-posts',
@@ -11,32 +12,18 @@ import { AuthService } from "../../shared/services/auth.service";
   ]
 })
 export class PostsComponent implements OnInit {
-  metadataList: any[] = [];
+  metadataList: Array<Post> = [];
 
-  constructor(private http: HttpClient,
-    private authService: AuthService,
-    private afStorage: AngularFireStorage) { }
+  constructor(private authService: AuthService,
+    private postService: PostService) { }
 
   ngOnInit(): void {
-    this.getAllPosts();
+    this.postService.getMetadataList()
+      .then(posts => {
+        posts.sort((a: any, b: any) =>
+          b.date - a.date
+        )
+        this.metadataList = posts;
+      });
   }
-
-  getAllPosts(): void {
-    var ref = this.afStorage.ref('');
-    ref.listAll().subscribe(data => {
-      for (var item of data.items) {
-        console.log(item);
-        item.getDownloadURL().then(url => {
-          this.http.get(url).subscribe(data => {
-            console.log(data);
-          });
-        });
-        //console.log(item)
-        //item.getMetadata().then(metadata => {
-        //  this.metadataList.push(metadata);
-        //});
-      }
-    });
-  }
-
 }

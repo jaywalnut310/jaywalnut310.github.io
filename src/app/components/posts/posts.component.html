@@ -1,1 +1,18 @@
-<p>posts works!</p>
+<div class="page-content">
+  <div class="wrapper">
+    <div class="home">
+      <div class="post postContent" *ngFor="let post of metadataList; index as i;">
+        <div class="postDate">
+          <span>{{ post.dateString }}</span>
+        </div>
+        <br>
+        <div class="postTitle">
+          <a class="postLink" [routerLink]="[post.fname.replace('.json','')]">{{ post.title }}</a>
+        </div>
+        <div class="postExt">
+          {{ post.abstract }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

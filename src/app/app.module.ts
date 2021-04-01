@@ -17,6 +17,8 @@ import { WriteComponent } from './components/write/write.component';
 import { EditorComponent } from './components/write/editor.component';
 
 import { AuthService } from "./shared/services/auth.service";
+import { PostService } from "./shared/services/post.service";
+
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -39,7 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSnackBarModule,
     BrowserAnimationsModule,
   ],
-  providers: [AuthService],
+  providers: [PostService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

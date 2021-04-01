@@ -1,6 +1,10 @@
 #title:focus {
     outline: none;
 }
+#title:disabled {
+    color: black;
+    background-color: transparent;
+}
 #title {
     color: black;
     background-color: transparent;
@@ -46,3 +50,4 @@
         background: transparent;
     }
 }
+
