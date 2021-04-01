@@ -1,0 +1,46 @@
+#title:focus {
+    outline: none;
+}
+#title {
+    width: 100%;
+    border: none;   
+    font-family: "PT Sans";
+    font-size: 62px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 15px;
+    @media screen and (max-width: 800px) {  font-size: 36px; }
+}
+
+.publish {
+    text-align: center;
+    button:focus {
+        outline: none;
+    }
+    button:hover {
+        span {
+            border-bottom: 1px dotted black;
+            border-color: black;
+        }
+        cursor: pointer;
+        color: black;
+        border-color: black;
+    }
+    button {
+        width: 108px;
+        height: 32px;
+        border-radius: 16px;
+        border: 1px solid #773F1A;
+        margin-top: 15px;
+        padding-top: 4px;
+        font-family: "Josefin Sans";
+        font-size: 14px;
+        font-weight: 300;
+        color: #773F1A;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-indent: 4px;
+        text-align: center;
+        background: transparent;
+    }
+}

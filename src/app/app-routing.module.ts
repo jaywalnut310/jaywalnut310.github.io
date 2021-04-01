@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { WriteComponent } from './components/write/write.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/about', pathMatch: 'full' },
+  { path: 'about', component: AboutComponent },
+  { path: 'posts', component: PostsComponent },
+  { path: 'write', component: WriteComponent },
+  { path: '**', redirectTo: '/about' }
 ];
 
 @NgModule({

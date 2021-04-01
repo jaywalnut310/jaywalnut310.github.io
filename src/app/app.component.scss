@@ -1,1 +1,16 @@
+.hidden-auth {
+    position: absolute;
+    left: 0px;
+    top: 0px;
 
+    button {
+        appearance: none;
+        border: none;
+        color: transparent;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        width: 24px;
+        height: 24px;
+    }
+}
