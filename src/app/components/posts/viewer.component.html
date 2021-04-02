@@ -3,6 +3,7 @@
     <article class="post">
       <div class="post-content">
         <div id="title" role="textbox" #title></div>
+        <p class="post-meta">{{ post.dateString }}</p>
         <div id="editor" #editor></div>
         <div class="publish" *ngIf="authService.isLoggedIn">
             <button disabled id="publish" (click)="upload($event)" #publishBtn><span>publish</span></button>

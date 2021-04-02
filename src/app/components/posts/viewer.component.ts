@@ -23,13 +23,17 @@ export class ViewerComponent implements OnInit {
   @ViewChild('deleteBtn') deleteBtnEl: any;
 
   private editor: any;
-  private post: any;
+  private fname: string;
+  post: Post;
 
   constructor(private route: ActivatedRoute,
     private router: Router,
     private snackBar: MatSnackBar,
     public authService: AuthService,
-    private postService: PostService) { }
+    private postService: PostService) { 
+    this.fname = this.route.snapshot.paramMap.get('fname') || '';
+    this.post = new Post({timestamp:this.fname});
+  }
 
   ngOnInit(): void {
   }
@@ -56,8 +60,7 @@ export class ViewerComponent implements OnInit {
       this.editor.disable()
       this.containerEl.nativeElement.classList.add("off");
     }
-    const fname = this.route.snapshot.paramMap.get('fname') || '';
-    this.postService.getPost(fname + ".json")
+    this.postService.getPost(this.fname + ".json")
       .then(post => {
         this.post = post;
         this.titleEl.nativeElement.innerText = this.post.title;
