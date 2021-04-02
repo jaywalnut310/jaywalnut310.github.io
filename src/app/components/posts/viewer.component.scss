@@ -1,18 +1,18 @@
-#title:focus {
-    outline: none;
-}
-#title:empty:before {
-    content: 'Title';
-    color: #717171;
-}
-#title[contenteditable] {
-    cursor: text;
-}
-#title:disabled {
-    color: black;
-    background-color: transparent;
-}
 #title {
+    &:focus {
+        outline: none;
+    }
+    &:empty:before {
+        content: 'Title';
+        color: #717171;
+    }
+    &[contenteditable] {
+        cursor: text;
+    }
+    &:disabled {
+        color: black;
+        background-color: transparent;
+    }
     color: black;
     background-color: transparent;
     width: 100%;
@@ -28,19 +28,19 @@
 .publish {
     text-align: center;
 
-    button:focus {
-        outline: none;
-    }
-    button:hover:enabled {
-        span {
-            border-bottom: 1px dotted black;
+    button {
+        &:focus {
+            outline: none;
+        }
+        &:hover:enabled{
+            span {
+                border-bottom: 1px dotted black;
+                border-color: black;
+            }
+            cursor: pointer;
+            color: black;
             border-color: black;
         }
-        cursor: pointer;
-        color: black;
-        border-color: black;
-    }
-    button {
         width: 108px;
         height: 32px;
         border-radius: 16px;

@@ -665,10 +665,12 @@ pre {
  * QUILL
  */
 .ql-editor.ql-blank::before {
-    font-family: "Source Sans Pro" !important;
-    font-size: 20px !important;
 }
 .ql-editor {
+    &.ql-blank::before {
+        font-family: "Source Sans Pro" !important;
+        font-size: 20px !important;
+    }
     p, li {
         font-family: "Source Sans Pro" !important;
         font-size: 20px !important;
@@ -676,6 +678,10 @@ pre {
     }
     a {
         text-decoration: none !important;
+    }
+    u {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        text-decoration: none;
     }
     h1 {
         font-size: 30px !important;
