@@ -666,26 +666,27 @@ pre {
  */
 .ql-editor.ql-blank::before {
     font-family: "Source Sans Pro" !important;
-    font-size: 1.5rem !important;
+    font-size: 20px !important;
 }
 .ql-editor {
     p, li {
         font-family: "Source Sans Pro" !important;
-        font-size: 1.5rem !important;
+        font-size: 20px !important;
+        line-height: 1.55em;
     }
     a {
         text-decoration: none !important;
     }
     h1 {
-        font-size: 38px !important;
+        font-size: 30px !important;
         @include media-query($on-laptop) {
-            font-size: 34px !important;
+            font-size: 26px !important;
         }
     }
     h2 {
-        font-size: 32px !important;
+        font-size: 26px !important;
         @include media-query($on-laptop) {
-            font-size: 28px !important;
+            font-size: 20px !important;
         }
     }
 }
