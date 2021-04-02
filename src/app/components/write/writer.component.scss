@@ -1,6 +1,13 @@
 #title:focus {
     outline: none;
 }
+#title:empty:before {
+    content: 'Title';
+    color: #717171;
+}
+#title[contenteditable] {
+    cursor: text;
+}
 #title {
     color: black;
     background-color: transparent;

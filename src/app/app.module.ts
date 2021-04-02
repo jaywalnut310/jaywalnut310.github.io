@@ -13,8 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
 import { PostsComponent } from './components/posts/posts.component';
-import { WriteComponent } from './components/write/write.component';
-import { EditorComponent } from './components/write/editor.component';
+import { ViewerComponent } from './components/posts/viewer.component';
+import { WriterComponent } from './components/write/writer.component';
 
 import { AuthService } from "./shared/services/auth.service";
 import { PostService } from "./shared/services/post.service";
@@ -27,8 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     AboutComponent,
     PostsComponent,
-    WriteComponent,
-    EditorComponent,
+    ViewerComponent,
+    WriterComponent,
   ],
   imports: [
     BrowserModule,

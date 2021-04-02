@@ -2,10 +2,12 @@
   <div class="wrapper">
     <article class="post">
       <div class="post-content">
-        <input id="title" disabled #title>
+        <div id="title" role="textbox" #title></div>
         <div id="editor" #editor></div>
-        <div class="publish">
-            <!--<button id="publish" (click)="upload($event)"><span>publish</span></button>-->
+        <div class="publish" *ngIf="authService.isLoggedIn">
+            <button disabled id="publish" (click)="upload($event)" #publishBtn><span>publish</span></button>
+            <span class="exclamationMark">/</span>
+            <button disabled id="delete" (click)="delete($event)" #deleteBtn><span>delete</span></button>
         </div>
       </div>
     </article>

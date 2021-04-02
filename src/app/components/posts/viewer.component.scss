@@ -1,6 +1,13 @@
 #title:focus {
     outline: none;
 }
+#title:empty:before {
+    content: 'Title';
+    color: #717171;
+}
+#title[contenteditable] {
+    cursor: text;
+}
 #title:disabled {
     color: black;
     background-color: transparent;
@@ -20,10 +27,11 @@
 
 .publish {
     text-align: center;
+
     button:focus {
         outline: none;
     }
-    button:hover {
+    button:hover:enabled {
         span {
             border-bottom: 1px dotted black;
             border-color: black;

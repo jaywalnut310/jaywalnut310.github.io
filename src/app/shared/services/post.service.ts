@@ -18,9 +18,7 @@ export class PostService {
     return new Promise<any>((resolve, reject) => {
       var ref = this.afStorage.ref(fname);
       ref.getMetadata().subscribe(metadata => {
-        var payload = Object.assign(
-          {'fname': fname}, 
-          metadata.customMetadata);
+        var payload = metadata.customMetadata;
         resolve(new Post(payload));
       });
     });
@@ -33,7 +31,7 @@ export class PostService {
         this.http.get(url).subscribe(contents => {
           ref.getMetadata().subscribe(metadata => {
             var payload = Object.assign(
-              {'fname': fname, 'contents': contents}, 
+              {'contents': contents}, 
               metadata.customMetadata);
             resolve(new Post(payload));
           });
@@ -66,49 +64,19 @@ export class PostService {
     });
   }
 
-
-//  getPostList() { 
-//    return new Promise<any>((resolve, reject) => {
-//      var ref = this.afStorage.ref('');
-//      ref.listAll().subscribe(data => {
-//        let requests = data.items.map((item) => {
-//          return this.getPost(item.fullPath);
-//        });
-//        Promise.all(requests).then((data) => resolve(data));
-//      });
-//    });
-//    //return this.angularFirestore
-//    //.collection("post-collection")
-//    //.snapshotChanges();
-//  }
-
-
-
   createPost(post: Post) {
-    //return new Promise<any>((resolve, reject) =>{
-    //  this.angularFirestore
-    //    .collection("post-collection")
-    //    .add(post)
-    //    .then(response => { console.log(response) }, error => reject(error));
-    //});
+    var metadata = {
+      customMetadata: {
+        'title': post.title,
+        'abstract': post.abstract,
+        'timestamp': post.timestamp
+      }
+    };
+    var blob = new Blob([post.contents], {type: "application/json"});
+    return this.afStorage.ref(post.fname).put(blob, metadata);
   }
 
-  deletePost(id: string) {
-    //return this.angularFirestore
-    //  .collection("post-collection")
-    //  .doc(id)
-    //  .delete();
-  }
-  
-  updatePost(post: Post, id: string) {
-    //return this.angularFirestore
-    //  .collection("post-collection")
-    //  .doc(id)
-    //  .update({
-    //    title: post.title,
-    //    abs: post.abs,
-    //    contents: post.contents,
-    //    timestamp: post.date.getTime()
-    //  });
+  deletePost(post: Post) {
+    return this.afStorage.ref(post.fname).delete();
   }
 }
